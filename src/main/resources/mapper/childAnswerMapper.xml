@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.dao.childAnswerDao">
+    <resultMap id="BaseResultMap" type="com.chinasofti.bean.childAnswer">
+        <id column="child_id" jdbcType="INTEGER" property="child_id" />
+        <result column="child_name" jdbcType="VARCHAR" property="child_name" />
+        <result column="child_sex" jdbcType="VARCHAR" property="child_sex" />
+        <result column="child_birthday" jdbcType="VARCHAR" property="child_birthday" />
+        <result column="child_class" jdbcType="VARCHAR" property="child_class" />
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
+        <result column="p_agree" jdbcType="VARCHAR" property="p_agree" />
+        <result column="c_agree" jdbcType="VARCHAR" property="c_agree" />
+        <result column="p_startTime" jdbcType="TIMESTAMP" property="p_startTime" />
+        <result column="p_endTime" jdbcType="TIMESTAMP" property="p_endTime" />
+        <result column="c_startTime" jdbcType="TIMESTAMP" property="c_startTime" />
+        <result column="c_endTime" jdbcType="TIMESTAMP" property="c_endTime" />
+        <result column="p_base_information" jdbcType="VARCHAR" property="p_base_information" />
+        <result column="p_screen_exposure" jdbcType="VARCHAR" property="p_screen_exposure" />
+        <result column="p_body_activities" jdbcType="VARCHAR" property="p_body_activities" />
+        <result column="p_sleep" jdbcType="VARCHAR" property="p_sleep" />
+        <result column="p_mental_health" jdbcType="VARCHAR" property="p_mental_health" />
+        <result column="p_study_need" jdbcType="VARCHAR" property="p_study_need" />
+        <result column="c_screen_exposure" jdbcType="VARCHAR" property="c_screen_exposure" />
+        <result column="c_body_activities" jdbcType="VARCHAR" property="c_body_activities" />
+        <result column="c_sleep" jdbcType="VARCHAR" property="c_sleep" />
+        <result column="c_mental_health" jdbcType="VARCHAR" property="c_mental_health" />
+        <result column="c_study_need" jdbcType="VARCHAR" property="c_study_need" />
+    </resultMap>
+
+    <select id="selectByPhone" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select child_id,child_name,child_sex,child_birthday,child_class,
+        p_agree,c_agree,p_startTime,p_endTime,c_startTime,c_endTime,p_base_information,p_screen_exposure
+        p_body_activities,p_sleep,p_mental_health,p_study_need,c_screen_exposure,c_body_activities,c_sleep,
+        c_mental_health,c_study_need
+        from child left join answer on child.child_id=answer.phone where child_id=#{phone}
+  </select>
+
+    <select id="selectAnswerByPhone"  resultMap="BaseResultMap">
+        select * from answer where phone=#{phone}
+    </select>
+
+    <insert id="initAnswer" parameterType="java.lang.String">
+        insert into answer (phone,p_agree,p_startTime,ip) values (#{phone},#{agree},now(),#{ip})
+    </insert>
+
+    <update id="initChildAnswer" parameterType="java.lang.String">
+        update answer set c_agree='1',c_startTime=now() where phone=#{phone}
+    </update>
+
+    <update id="childNotAgree" parameterType="java.lang.String">
+        update answer set c_agree='2',c_startTime=now() where phone=#{phone}
+    </update>
+
+    <update id="addAnswer" parameterType="com.chinasofti.bean.childAnswer">
+        update answer
+        <set>
+            <if test="p_base_information != null">
+                p_base_information = #{p_base_information,jdbcType=VARCHAR},
+            </if>
+            <if test="p_screen_exposure != null">
+                p_screen_exposure = #{p_screen_exposure,jdbcType=VARCHAR},
+            </if>
+            <if test="p_body_activities != null">
+                p_body_activities = #{p_body_activities,jdbcType=VARCHAR},
+            </if>
+            <if test="p_sleep != null">
+                p_sleep  = #{p_sleep,jdbcType=VARCHAR},
+            </if>
+            <if test="p_mental_health != null">
+                p_mental_health = #{p_mental_health,jdbcType=VARCHAR},
+            </if>
+            <if test="p_study_need != null">
+                p_study_need  = #{p_study_need,jdbcType=VARCHAR},
+            </if>
+            <if test="c_screen_exposure != null">
+                c_screen_exposure = #{c_screen_exposure,jdbcType=VARCHAR},
+            </if>
+            <if test="c_body_activities != null">
+                c_body_activities = #{c_body_activities,jdbcType=VARCHAR},
+            </if>
+            <if test="c_sleep != null">
+                c_sleep= #{c_sleep,jdbcType=VARCHAR},
+            </if>
+            <if test="c_mental_health != null">
+                c_mental_health = #{c_mental_health,jdbcType=VARCHAR},
+            </if>
+            <if test="c_study_need != null">
+                c_study_need= #{c_study_need,jdbcType=VARCHAR},
+            </if>
+            <if test="p_endTime != null">
+                p_endTime = #{p_endTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="c_endTime != null">
+                c_endTime = #{c_endTime,jdbcType=TIMESTAMP},
+            </if>
+
+        </set>
+        where phone=#{child_id}
+    </update>
+
+</mapper>

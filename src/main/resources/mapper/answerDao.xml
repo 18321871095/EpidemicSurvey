@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.dao.answerDao">
+  <resultMap id="BaseResultMap" type="com.chinasofti.bean.answer">
+    <id column="token" jdbcType="VARCHAR" property="token" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="agree" jdbcType="VARCHAR" property="agree" />
+    <result column="answer0" jdbcType="VARCHAR" property="answer0" />
+    <result column="answer1" jdbcType="LONGVARCHAR" property="answer1" />
+    <result column="answer2" jdbcType="LONGVARCHAR" property="answer2" />
+    <result column="answer3" jdbcType="LONGVARCHAR" property="answer3" />
+    <result column="answer4" jdbcType="LONGVARCHAR" property="answer4" />
+    <result column="answer5" jdbcType="LONGVARCHAR" property="answer5" />
+    <result column="answer6" jdbcType="LONGVARCHAR" property="answer6" />
+    <result column="answer7" jdbcType="LONGVARCHAR" property="answer7" />
+    <result column="answer8" jdbcType="LONGVARCHAR" property="answer8" />
+    <result column="answer9" jdbcType="LONGVARCHAR" property="answer9" />
+    <result column="answer10" jdbcType="LONGVARCHAR" property="answer10" />
+    <result column="answer11" jdbcType="LONGVARCHAR" property="answer11" />
+    <result column="answer12" jdbcType="LONGVARCHAR" property="answer12" />
+    <result column="answer15" jdbcType="LONGVARCHAR" property="answer15" />
+    <result column="answer16" jdbcType="LONGVARCHAR" property="answer16" />
+    <result column="currentNum" jdbcType="VARCHAR" property="currentnum" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+  </resultMap>
+
+
+  <!--<insert id="insert" parameterType="com.chinasofti.bean.answerWithBLOBs">
+    insert into answer (token, phone, agree, 
+      answer0, currentNum, state, 
+      startTime, endTime, ip, 
+      answer1, answer2, answer3, 
+      answer4, answer5, answer6, 
+      answer7, answer8, answer9, 
+      answer10)
+    values (#{token,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{agree,jdbcType=VARCHAR}, 
+      #{answer0,jdbcType=VARCHAR}, #{currentnum,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, 
+      #{starttime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP}, #{ip,jdbcType=VARCHAR}, 
+      #{answer1,jdbcType=LONGVARCHAR}, #{answer2,jdbcType=LONGVARCHAR}, #{answer3,jdbcType=LONGVARCHAR}, 
+      #{answer4,jdbcType=LONGVARCHAR}, #{answer5,jdbcType=LONGVARCHAR}, #{answer6,jdbcType=LONGVARCHAR}, 
+      #{answer7,jdbcType=LONGVARCHAR}, #{answer8,jdbcType=LONGVARCHAR}, #{answer9,jdbcType=LONGVARCHAR}, 
+      #{answer10,jdbcType=LONGVARCHAR})
+  </insert>-->
+  <insert id="addAnswer" parameterType="com.chinasofti.bean.answer">
+    insert into answer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="token != null">
+        token,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="agree != null">
+        agree,
+      </if>
+      <if test="answer0 != null">
+        answer0,
+      </if>
+      <if test="answer1 != null">
+        answer1,
+      </if>
+      <if test="answer2 != null">
+        answer2,
+      </if>
+      <if test="answer3 != null">
+        answer3,
+      </if>
+      <if test="answer4 != null">
+        answer4,
+      </if>
+      <if test="answer5 != null">
+        answer5,
+      </if>
+      <if test="answer6 != null">
+        answer6,
+      </if>
+      <if test="answer7 != null">
+        answer7,
+      </if>
+      <if test="answer8 != null">
+        answer8,
+      </if>
+      <if test="answer9 != null">
+        answer9,
+      </if>
+      <if test="answer10 != null">
+        answer10,
+      </if>
+      <if test="answer11 != null">
+        answer11,
+      </if>
+      <if test="answer12 != null">
+        answer12,
+      </if>
+
+      <if test="answer15 != null">
+        answer15,
+      </if>
+      <if test="answer16 != null">
+        answer16,
+      </if>
+      <if test="currentnum != null">
+        currentNum,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="starttime != null">
+        startTime,
+      </if>
+      <if test="endtime != null">
+        endTime,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="token != null">
+        #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="agree != null">
+        #{agree,jdbcType=VARCHAR},
+      </if>
+      <if test="answer0 != null">
+        #{answer0,jdbcType=VARCHAR},
+      </if>
+      <if test="answer1 != null">
+        #{answer1,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer2 != null">
+        #{answer2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer3 != null">
+        #{answer3,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer4 != null">
+        #{answer4,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer5 != null">
+        #{answer5,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer6 != null">
+        #{answer6,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer7 != null">
+        #{answer7,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer8 != null">
+        #{answer8,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer9 != null">
+        #{answer9,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer10 != null">
+        #{answer10,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer11 != null">
+        #{answer11,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer12 != null">
+        #{answer12,jdbcType=LONGVARCHAR},
+      </if>
+
+      <if test="answer15 != null">
+        #{answer15,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer16 != null">
+        #{answer16,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="currentnum != null">
+        #{currentnum,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="starttime != null">
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+
+    </trim>
+  </insert>
+
+  <select id="getAnswerByToken" resultMap="BaseResultMap">
+    select token,phone,agree,currentNum,state,answer1 from answer where token=#{token}
+  </select>
+
+
+  <update id="updateAnswer" parameterType="com.chinasofti.bean.answer">
+    update answer
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="agree != null">
+        agree = #{agree,jdbcType=VARCHAR},
+      </if>
+      <if test="answer0 != null">
+        answer0 = #{answer0,jdbcType=VARCHAR},
+      </if>
+      <if test="answer1 != null">
+        answer1 = #{answer1,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer2 != null">
+        answer2 = #{answer2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer3 != null">
+        answer3 = #{answer3,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer4 != null">
+        answer4 = #{answer4,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer5 != null">
+        answer5 = #{answer5,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer6 != null">
+        answer6 = #{answer6,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer7 != null">
+        answer7 = #{answer7,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer8 != null">
+        answer8 = #{answer8,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer9 != null">
+        answer9 = #{answer9,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer10 != null">
+        answer10 = #{answer10,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer11 != null">
+        answer11 = #{answer11,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer12 != null">
+        answer12 = #{answer12,jdbcType=LONGVARCHAR},
+      </if>
+
+      <if test="answer15 != null">
+        answer15 = #{answer15,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="answer16 != null">
+        answer16 = #{answer16,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="currentnum != null">
+        currentNum = #{currentnum,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="starttime != null">
+        startTime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        endTime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ip != null">
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+
+    </set>
+    where token = #{token,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

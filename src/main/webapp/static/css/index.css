@@ -1,0 +1,589 @@
+
+@font-face {
+	font-family: 'iconfont';
+	src: url('../fonts/iconfont.eot');
+	src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iconfont.woff2') format('woff2'),
+		url('../fonts/iconfont.woff') format('woff'),
+		url('../fonts/iconfont.ttf') format('truetype'),
+		url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/*  */
+
+.myForm {
+	width: 85%;
+	margin-left: 7.5%;
+}
+
+.mui-input-group:before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 0;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.mui-input-group:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 0;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.mui-input-group .mui-input-row:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 15px;
+	height: 0;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.myForm .mui-input-row label {
+	height: 40px;
+	width: 20%;
+	color: #007AFF;
+	padding: 0 0 0 15px;
+	line-height: 40px;
+}
+
+.myForm .mui-input-row:first-child input {
+	width: 80%;
+}
+
+.myForm-btn {
+	width: 100%;
+	border-radius: 5px;
+	background: #349fcf;
+	color: #fff;
+	font-size: 18px;
+	line-height: 40px;
+	margin: 30px 0 20px;
+}
+
+/* 信息填写*/
+
+
+
+
+* {
+	touch-action: pan-y;
+}
+
+.formBox {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.formBox .mui-input-group:before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 0;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.formBox .mui-input-group:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 0;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.formBox .mui-table-view {
+
+	border-radius: 10px;
+	border: 1px solid #efefef;
+	margin-top: 10px;
+
+}
+
+.formBox .mui-table-view:before {
+	position: absolute;
+	right: 0;
+	left: 0;
+	height: 0;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+	top: -1px;
+}
+
+.formBox .mui-table-view .mui-table-view-cell a {
+	color: #333;
+	font-size: 14px;
+	border-radius: 10px;
+}
+
+.formBox .mui-table-view .mui-table-view-cell:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 0;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.mui-table-view:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 0;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.formBox .mui-input-row label {
+	color: #333;
+	font-size: 14px;
+	height: 40px;
+	padding: 0 0 0 15px;
+	line-height: 40px;
+}
+
+.formBox .mui-input-row input {
+	color: #666;
+	font-size: 14px;
+}
+
+.mui-input-group .mui-input-row {
+	border-radius: 10px;
+	border: 1px solid #efefef;
+	margin-top: 10px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.formBox .mui-input-group .mui-input-row:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 0;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.subBtn {
+	width: 100%;
+	background: #349fcf;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	margin-top: 30px;
+	border-radius: 10px;
+	padding: 10px 15px;
+}
+
+#sexResult, #schoolResult, #classResult,#birthdayResult{ width: 60%;
+color: #666;}
+.mydiv{
+	margin: 0 20px;
+	border: 1px solid #086cfe;
+	display: none;
+}
+/*问卷题目 */
+.con {
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px;
+	background: #fff;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+.con-tit {
+	font-size: 16px;
+	color: #333;
+	width: 100%;
+	text-align: center;
+	/* margin-top: 20px; */
+}
+
+.con-p {
+	color: #666;
+	width: 100%;
+	font-size: 14px;
+	text-indent: 2em;
+	margin-top: 10px;
+}
+
+.con-tit2 {
+	font-size: 14px;
+	color: #333;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.tmWrap {
+	width: 90%;
+	margin: 10px 5% 20px;
+	box-sizing: border-box;
+	background: #fff;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+
+.problems {
+	font-size: 17px;
+	color: #086cfe;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 3px;
+}
+
+
+/*1-2年级学生答题 */
+.con12 {
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px;
+	background: #fff;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+.con12-tit {
+	font-size: 16px;
+	color: #333;
+	width: 100%;
+	text-align: center;
+}
+
+.con12-p {
+	color: #666;
+	width: 100%;
+	font-size: 14px;
+	text-indent: 2em;
+	margin-top: 10px;
+}
+
+.con12-tit2 {
+	font-size: 14px;
+	color: #333;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.tmWrap12 {
+	width: 90%;
+	margin: 10px 5% 20px;
+	box-sizing: border-box;
+	background: #fff;
+	border-radius: 10px;
+	padding: 10px;
+	border: 1px solid #87b2ff;
+}
+.tmWrap35 {
+	width: 90%;
+	margin: 10px 5% 20px;
+	box-sizing: border-box;
+	background: #fff;
+	border-radius: 10px;
+	padding: 10px;
+	border: 1px solid #3f9b60;
+}
+
+.problems12 {
+	font-size: 17px;
+	color: #086cfe;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 3px;
+}
+
+/*3-5年级学生答题 */
+
+.con35 {
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px;
+	background: #fff;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+.con35-tit {
+	font-size: 16px;
+	color: #333;
+	width: 100%;
+	text-align: center;
+}
+
+.con35-p {
+	color: #666;
+	width: 100%;
+	font-size: 14px;
+	text-indent: 2em;
+	margin-top: 10px;
+}
+
+.con35-tit2 {
+	font-size: 14px;
+	color: #333;
+	width: 100%;
+	margin-top: 20px;
+}
+
+
+
+
+.problems35 {
+	font-size: 17px;
+	color: #3f9b60;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 3px;
+}
+
+/* 3-5年级学生家长答题 */
+.con35jz {
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px;
+	background: #fff;
+	box-sizing: border-box;
+	border-radius: 10px;
+	margin-top: -5px;
+}
+
+.con35jz-tit {
+	font-size: 16px;
+	color: #333;
+	width: 100%;
+	text-align: center;
+}
+
+.con35jz-p {
+	color: #666;
+	width: 100%;
+	font-size: 14px;
+	text-indent: 2em;
+	margin-top: 10px;
+}
+
+.con35jz-tit2 {
+	font-size: 14px;
+	color: #333;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.tmWrap35jz {
+	width: 90%;
+	margin: 10px 5% 20px;
+	box-sizing: border-box;
+	background: #fff;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+
+.problems35jz {
+	font-size: 17px;
+	color: #086cfe;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 3px;
+}
+
+/*6-高3年级学生答题 */
+.con63 {
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px;
+	background: #fff;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+.con63-tit {
+	font-size: 16px;
+	color: #333;
+	width: 100%;
+	text-align: center;
+}
+
+.con63-p {
+	color: #666;
+	width: 100%;
+	font-size: 14px;
+	text-indent: 2em;
+	margin-top: 10px;
+}
+
+.con63-tit2 {
+	font-size: 14px;
+	color: #333;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.tmWrap63 {
+	width: 90%;
+	margin: 10px 5% 20px;
+	box-sizing: border-box;
+	background: #fff;
+	border-radius: 10px;
+	padding: 10px;
+	border: 1px solid #87b2ff;
+}
+
+
+.problems63 {
+	font-size: 17px;
+	color: #086cfe;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 3px;
+}
+/*6-高3年级家长答题 */
+.con63jz {
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px;
+	background: #fff;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+.con63jz-tit {
+	font-size: 16px;
+	color: #333;
+	width: 100%;
+	text-align: center;
+}
+
+.con63jz-p {
+	color: #666;
+	width: 100%;
+	font-size: 14px;
+	text-indent: 2em;
+	margin-top: 10px;
+}
+
+.con63jz-tit2 {
+	font-size: 14px;
+	color: #333;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.tmWrap63jz {
+	width: 90%;
+	margin: 10px 5% 20px;
+	box-sizing: border-box;
+	background: #fff;
+	border-radius: 10px;
+	padding: 10px;
+	border: 1px solid #3651c0;
+}
+
+
+.problems63jz {
+	font-size: 17px;
+	color: #3651c0;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 3px;
+}
+.myi{
+	display:inline-block;
+	width:0;
+	height:0;
+	border-top:5px solid red;
+	border-left:4px solid transparent;
+	border-right:4px solid transparent;
+	border-bottom:0;
+	position: relative;
+	right: 8px;
+}
+.myi_input{
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 1px solid #000;
+	width: 86%;
+	text-align: center;
+}
+.mybtn{
+	width: 60%;
+	height: 35px;
+	background: #1E9FFF;
+	color: #fff;
+	font-size: 17px;
+}
+/* 家长知情同意 */
+.zqtyJ-tit{ width: 100%; text-align: center; padding: 15px 0;color: #3651c0;}
+.zqtyJ{ width: 100%; padding: 10px 0; box-sizing: border-box;}
+.zqtyJ h3{ font-size: 20px; color: #333; font-weight: 600; margin-top: 10px;}
+.zqtyJ p{ font-size: 16px; color: #666; line-height: 1.8;}
+.yy{ font-size: 14px; color: #999; margin-top: 20px; }
+/* 孩子知情同意 */
+.zqtyC-tit{ width: 100%; text-align: center; padding: 15px 0;color: #ff8010;}
+.zqtyC{ width: 100%;  box-sizing: border-box;}
+.zqtyC h3{ font-size: 20px; color: #333; font-weight: 600; margin-top: 10px;}
+.zqtyC p{ font-size: 16px; color: #666; line-height: 1.8;}
+
+/*txBox*/
+.txBox{ width: 70%; height: 100px; text-align: center; margin: -10px auto 0; /*border: 2px solid #277b52;*/  border-radius: 5px; box-sizing: border-box;
+	z-index: 9999; padding: 15px; color: #277b52; font-size: 20px; line-height: 1.8;}
+.tipBtn button{ width: 60%; background: #277b52; color: #fff; margin: 20px 20%;}
+.tipImg{width:60%; margin: 50px auto;}
+@media (min-width: 1024px){ .tipImg{width:50%; margin: 50px auto;}
+	.txBox{font-size: 30px;}
+
+} /*>=1024的设备*/
+@media (min-width: 1100px) { .tipImg{width:50%; margin: 50px auto;}.txBox{font-size: 30px;} } /*>=1100的设备*/
+@media (min-width: 1280px) { .tipImg{width:50%; margin: 50px auto;}.txBox{font-size: 30px;} } /*>=1280的设备*/
+@media (min-width: 1366px) { .tipImg{width:30%; margin: 50px auto;}.txBox{font-size: 30px;} }
+@media (min-width: 1440px) { .tipImg{width:30%; margin: 50px auto;}.txBox{font-size: 30px;} }
+@media (min-width: 1680px) { .tipImg{width:30%; margin: 50px auto;}.txBox{font-size: 30px;} }
+@media (min-width: 1920px) { .tipImg{width:30%; margin: 50px auto;}.txBox{font-size: 30px;}}
+

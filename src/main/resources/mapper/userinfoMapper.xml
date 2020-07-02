@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.dao.userinfoDao">
+  <resultMap id="userinfo" type="com.chinasofti.bean.userinfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="authority" jdbcType="VARCHAR" property="authority" />
+    <result column="key" jdbcType="VARCHAR" property="key" />
+    <result column="district" jdbcType="VARCHAR" property="district" />
+    <result column="grade" jdbcType="VARCHAR" property="grade" />
+    <result column="owner" jdbcType="VARCHAR" property="owner" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="status_daban" jdbcType="INTEGER" property="status_daban" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="adminPss" jdbcType="INTEGER" property="adminPss" />
+    <result column="biaoshi" jdbcType="VARCHAR" property="biaoshi" />
+  </resultMap>
+
+  <select id="selectOne" resultMap="userinfo">
+      select * from userinfo where id=#{id} and type=1
+  </select>
+
+  <!--登录-->
+  <select id="selUserInfoByAccontPwd" resultMap="userinfo">
+    select * from userinfo where account=#{account} and pwd=#{pwd}
+  </select>
+
+  <update id="updateStatus_daban">
+    update userinfo set status_daban=1 where id=#{id}
+  </update>
+
+  <update id="updateStatus_xiaoban">
+    update userinfo set status=1 where id=#{id}
+  </update>
+
+
+</mapper>
